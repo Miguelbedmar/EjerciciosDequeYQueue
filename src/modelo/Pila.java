@@ -1,6 +1,6 @@
 package modelo;
 
-public class Pila<pila> {
+public class Pila<T> {
     //ATRIBUTO
 
     //CONSTRUCTOR
@@ -8,7 +8,6 @@ public class Pila<pila> {
     }
 
 
-    //GETTERS Y SETTERS
-    
+   
 
 }
