@@ -1,5 +1,14 @@
 package modelo;
 
-public class Cola {
+public class Cola<Cola> {
+
+    //ATRIBUTO
+
+
+    //CONSTRUCTOR
+    public Cola() {
+    }
+
+    //GETTERS Y SETTERS
 
 }
