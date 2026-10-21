@@ -7,7 +7,7 @@ public class Nodo<T> {
 	
 
 	public Nodo(T datoT){
-		this.dato=dato;
+		this.dato=datoT;
 		this.siguienteDato=null;
 	}
 
@@ -15,15 +15,15 @@ public class Nodo<T> {
         return dato;
     }
 
-    public void setDato(T dato) {
-        this.dato = dato;
+    public void setDato(T datoT) {
+        this.dato = datoT;
     }
 
     public Nodo<T> getSiguienteDato() {
         return siguienteDato;
     }
 
-    public void setSiguienteDato(Nodo siguienteDato) {
+    public void setSiguienteDato(Nodo<T> siguienteDato) {
         this.siguienteDato = siguienteDato;
     }
 	

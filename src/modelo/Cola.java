@@ -44,12 +44,12 @@ public class Cola<T> {
         return principioCola == null;
     }
 
-   
     //Obtenemos el tamaño de la cola
     public int getTamanio() {
         return tamanio;
     }
-     /**
+
+    /**
      * Para mostrar la pila utilizo el metodo toString e instancio un objeto de
      * tipo StrigBuilder para porder concatadenar los datos
      */
