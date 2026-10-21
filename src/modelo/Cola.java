@@ -15,18 +15,33 @@ public class Cola<T> {
     }
 
     //METODOS QUEUE DEQUEQUE Y ISEMPTY
-    public T encolar(){
-        return null;
+    public void encolar(T dT) {
+        Nodo<T> nd = new Nodo<>(dT);
+        if (estaVacio()) { //Comprobamos si el principio de la cola está vacio
+            principioCola = null;
+        } else {
+            finalCola.setSiguienteDato(nd); //seleccionamos el siguiente elemento al final de la cola
+        }
+        finalCola = nd;
+        tamanio++;
     }
 
+    public T desencolar() {
+        if (estaVacio()) { 
+            return null;
+        }
+        T dt = principioCola.getDato(); // Obtenemos el elemento acutal del principio
+        principioCola = principioCola.getSiguienteDato(); 
+        if (principioCola == null) {  
+            finalCola = null; // Si el principio de la cola está vacio entonces vaciamos el final.
+        }
 
-    public T desencolar(){
-        return null;
+        tamanio--;
+        return dt;
     }
 
-    public boolean isempty(){
-        return principioCola==null;
+    public boolean estaVacio() { 
+        return principioCola == null; 
     }
-
 
 }
