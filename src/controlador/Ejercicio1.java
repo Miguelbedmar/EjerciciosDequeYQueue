@@ -25,9 +25,14 @@ public class Ejercicio1 {
         while (!valido) {
             try {
                 System.out.println("Introduzca un texto o frase");
+                
                 String texto = sc.nextLine();
                 if (texto.isEmpty()) {
                     System.out.println("No puedes ingresar un texto vacío");
+                    continue;
+                }
+                if (texto.length() < 2) {
+                    System.out.println("Longitud no válida");
                     continue;
                 }
                 valido = true;
@@ -37,9 +42,9 @@ public class Ejercicio1 {
                 System.out.println("Texto invertido" + textoInvertido);
             } catch (Exception e) {
                 System.out.println("Valor no válido");
-                
 
             }
+            
         }
 
     }
