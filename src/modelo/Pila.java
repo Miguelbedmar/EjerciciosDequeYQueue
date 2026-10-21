@@ -30,7 +30,7 @@ public class Pila<T> {
      * primero con una condición comprobaremos si la pila vacía si no se cumple  entonces apuntamos a la cima 
      * desapilamos yobtenemos el siguiente dato en la cima .* */
     public T pop() {
-        if (ISEMPTY()) {
+        if (isempty()) {
             return null;
         }
         T dt = pilaCima.getDato();
@@ -39,7 +39,7 @@ public class Pila<T> {
         return dt;
     }
 
-    public boolean ISEMPTY() {
+    public boolean isempty() {
         return pilaCima == null; // Comprobamos si la pila está vacía
     }
 

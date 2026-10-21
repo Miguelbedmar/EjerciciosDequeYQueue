@@ -10,14 +10,16 @@ public class Cola<T> {
     //CONSTRUCTOR
     public Cola() {
         this.finalCola = null;
-        this.principioCola=null;
+        this.principioCola = null;
         this.tamanio = 0;
     }
 
     //METODOS QUEUE DEQUEQUE Y ISEMPTY
 
 
-
+    public boolean isempty(){
+        return principioCola==null;
+    }
 
 
 }
