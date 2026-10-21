@@ -21,12 +21,18 @@ public class Ejercicio1<T> {
     }
 
     public void imprimirResultado(Scanner sc) {
-        System.out.println("Introduzca un texto o frase");
-        String texto = sc.nextLine();
 
-        String textoInvertido = invertirTexto(texto); // Llamamos al metodo invertirTexto
+        try {
+            System.out.println("Introduzca un texto o frase");
+            String texto = sc.nextLine();
 
-        System.out.println("Texto sin invertir:" + texto);
-        System.out.println("Texto invertido" + textoInvertido);
+            String textoInvertido = invertirTexto(texto); // Llamamos al metodo invertirTexto
+
+            System.out.println("Texto sin invertir:" + texto);
+            System.out.println("Texto invertido" + textoInvertido);
+        } catch (Exception e) {
+            System.out.println("Valor no válido");
+        }
+
     }
 }
