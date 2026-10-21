@@ -43,13 +43,22 @@ public class Cola<T> {
     public boolean estaVacio() {
         return principioCola == null;
     }
-    // Metodo para mostrar la cola 
+    /**Para mostrar la pila utilizo el metodo toString  e instancio un objeto de tipo 
+     * StrigBuilder para porder concatadenar los datos 
+     */
+
+
+    //Obtenemos el tamaño de la cola
+    public int getTamanio() { 
+        return tamanio;
+    }
+
     @Override
     public String toString() { 
         if (estaVacio()) {
             return "Cola Vacia";
         }
-        StringBuilder stbP = new StringBuilder(); // Instancio un objeto de tipo StringBuilder 
+        StringBuilder stbP = new StringBuilder(); // Instancio un objeto de tipo StringBuilder
 
         Nodo<T> nd = principioCola;
 
@@ -57,7 +66,7 @@ public class Cola<T> {
             stbP.append("[").append(nd.getDato()).append("]"); 
             nd = nd.getSiguienteDato();
         }
-        return stbP.toString().trim();
+        return stbP.toString();
     }
 
 }

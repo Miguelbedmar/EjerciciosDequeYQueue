@@ -44,6 +44,10 @@ public class Pila<T> {
     }
 
 
+    //Obtenemos el tamaño de la pila
+    public int getTamanio() {
+        return tamanio;
+    }
     //Metodo ToString para mostrar la pila
     @Override
     public String toString() {
@@ -57,7 +61,7 @@ public class Pila<T> {
             nd=nd.getSiguienteDato();
         }   
 
-        return stbP.toString().trim();
+        return stbP.toString();
     }
     
 }
