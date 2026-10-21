@@ -43,27 +43,27 @@ public class Cola<T> {
     public boolean estaVacio() {
         return principioCola == null;
     }
-    /**Para mostrar la pila utilizo el metodo toString  e instancio un objeto de tipo 
-     * StrigBuilder para porder concatadenar los datos 
-     */
 
-
+   
     //Obtenemos el tamaño de la cola
-    public int getTamanio() { 
+    public int getTamanio() {
         return tamanio;
     }
-
+     /**
+     * Para mostrar la pila utilizo el metodo toString e instancio un objeto de
+     * tipo StrigBuilder para porder concatadenar los datos
+     */
     @Override
-    public String toString() { 
+    public String toString() {
         if (estaVacio()) {
             return "Cola Vacia";
         }
-        StringBuilder stbP = new StringBuilder(); // Instancio un objeto de tipo StringBuilder
+        StringBuilder stbP = new StringBuilder("Cola: Principio->Final"); // Instancio un objeto de tipo StringBuilder
 
         Nodo<T> nd = principioCola;
 
-        while (nd != null) {
-            stbP.append("[").append(nd.getDato()).append("]"); 
+        while (nd != null) { // Con un bucle while concadeno los datos hasta que la cola este vacía 
+            stbP.append("[").append(nd.getDato()).append("]");
             nd = nd.getSiguienteDato();
         }
         return stbP.toString();
