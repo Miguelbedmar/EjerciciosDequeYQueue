@@ -21,21 +21,25 @@ public class Ejercicio1 {
     }
 
     public static void imprimirResultado(Scanner sc) {
-    
-        try {
-            System.out.println("Introduzca un texto o frase");
-            String texto = sc.nextLine();
-            if(texto.isEmpty()){
-                System.out.println("No puedes ingresar un texto vacío");
-                return;
-            }
-            
-            String textoInvertido = invertirTexto(texto); // Llamamos al metodo invertirTexto
+        boolean valido = false;
+        while (!valido) {
+            try {
+                System.out.println("Introduzca un texto o frase");
+                String texto = sc.nextLine();
+                if (texto.isEmpty()) {
+                    System.out.println("No puedes ingresar un texto vacío");
+                    continue;
+                }
+                valido = true;
+                String textoInvertido = invertirTexto(texto); // Llamamos al metodo invertirTexto
 
-            System.out.println("Texto sin invertir:" + texto);
-            System.out.println("Texto invertido" + textoInvertido);
-        } catch (Exception e) {
-            System.out.println("Valor no válido");
+                System.out.println("Texto sin invertir:" + texto);
+                System.out.println("Texto invertido" + textoInvertido);
+            } catch (Exception e) {
+                System.out.println("Valor no válido");
+                
+
+            }
         }
 
     }
