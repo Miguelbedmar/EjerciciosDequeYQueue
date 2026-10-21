@@ -5,7 +5,6 @@ import modelo.Pila;
 
 public class Ejercicio1<T> {
 
-    private Pila<T> dato;
     private Scanner sc;
 
     public Ejercicio1() {
@@ -19,7 +18,7 @@ public class Ejercicio1<T> {
             dtCha.apilar(texto.charAt(i));
         }
         StringBuilder invertir = new StringBuilder();
-        while (!dato.estaVacio()) { 
+        while (!dtCha.estaVacio()) {
             invertir.append("[").append(dtCha).append("]");
         }
 
@@ -28,6 +27,9 @@ public class Ejercicio1<T> {
     }
 
     public void imprimirResultado(Scanner sc) {
+        System.out.println("Introduzca un texto o frase");
+        String texto = sc.nextLine();
 
+        String textoInvertido= invertirTexto(texto);
     }
 }
