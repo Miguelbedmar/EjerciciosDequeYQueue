@@ -15,7 +15,14 @@ public class Cola<T> {
     }
 
     //METODOS QUEUE DEQUEQUE Y ISEMPTY
+    public T encolar(){
+        return null;
+    }
 
+
+    public T desencolar(){
+        return null;
+    }
 
     public boolean isempty(){
         return principioCola==null;
