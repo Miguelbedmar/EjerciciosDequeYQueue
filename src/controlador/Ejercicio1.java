@@ -1,5 +1,6 @@
 package controlador;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import modelo.Pila;
 
@@ -25,7 +26,7 @@ public class Ejercicio1 {
         while (!valido) {
             try {
                 System.out.println("Introduzca un texto o frase");
-                
+
                 String texto = sc.nextLine();
                 if (texto.isEmpty()) {
                     System.out.println("No puedes ingresar un texto vacío");
@@ -39,13 +40,12 @@ public class Ejercicio1 {
                 String textoInvertido = invertirTexto(texto); // Llamamos al metodo invertirTexto
 
                 System.out.println("Texto sin invertir:" + texto);
-                System.out.println("Texto invertido" + textoInvertido);
-            } catch (Exception e) {
-                System.out.println("Valor no válido");
+                System.out.println("Texto invertido: " + textoInvertido);
 
+            } catch (NoSuchElementException e) { // Con la excepción NoSuchElement impedimos que el usuario ingrese más allá del programa.
+                System.out.println("ERROR!: Has accedido al final del archivo finalizando");
+                break;
             }
-            
         }
-
     }
 }
