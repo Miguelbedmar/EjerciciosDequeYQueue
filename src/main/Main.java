@@ -1,23 +1,20 @@
 package main;
 
-import java.util.Scanner;
 import modelo.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         Pila<String> p = new Pila<>();
 
+        p.apilar("Elemento 1");
+        p.apilar("Elemento 2");
+        p.apilar("Elemento 3");
+        System.out.println("\nTamaño de la  Pila" + p.getTamanio() + p);
 
-            System.out.println("Ingrese los elementos de la pila");
-            String e = sc.nextLine();
-
-            p.apilar(e);
-            System.out.println(p.getTamanio());
-
-            System.out.println(p);
-        
+        while (!p.estaVacio()) {
+            System.out.println(p.desapilar());
+        }
 
     }
 
