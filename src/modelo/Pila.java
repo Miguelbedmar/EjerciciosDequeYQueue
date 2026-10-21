@@ -15,7 +15,7 @@ public class Pila<T> {
 
     //METODOS PUSH POP Y ISEMPTY
     /**
-     * Con el metodo push apilamos un nuevo elemento a la pila ,la linea 22 Se
+     * Con el metodo push apilamos un nuevo elemento a la pila , Se
      * instancia un objeto Nodo que sirve como base general despues apunta a la
      * cima de la pila y el nuevo elemento pasa ser la cima de la pila.
      */
@@ -43,4 +43,21 @@ public class Pila<T> {
         return pilaCima == null; // Comprobamos si la pila está vacía
     }
 
+
+    //Metodo ToString para mostrar la pila
+    @Override
+    public String toString() {
+        if(estaVacio()){
+            return "Pila vacía";
+        }
+        StringBuilder stbP = new StringBuilder();
+        Nodo<T> nd =pilaCima;
+        while (nd!=null) {
+            stbP.append("[").append(nd.getDato()).append("]");
+            nd=nd.getSiguienteDato();
+        }   
+
+        return stbP.toString().trim();
+    }
+    
 }

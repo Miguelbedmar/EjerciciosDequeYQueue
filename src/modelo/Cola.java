@@ -18,7 +18,7 @@ public class Cola<T> {
     public void encolar(T dT) {
         Nodo<T> nd = new Nodo<>(dT);
         if (estaVacio()) { //Comprobamos si el principio de la cola está vacio
-            principioCola = null;
+            principioCola = nd;
         } else {
             finalCola.setSiguienteDato(nd); //seleccionamos el siguiente elemento al final de la cola
         }
@@ -27,12 +27,12 @@ public class Cola<T> {
     }
 
     public T desencolar() {
-        if (estaVacio()) { 
+        if (estaVacio()) {
             return null;
         }
         T dt = principioCola.getDato(); // Obtenemos el elemento acutal del principio
-        principioCola = principioCola.getSiguienteDato(); 
-        if (principioCola == null) {  
+        principioCola = principioCola.getSiguienteDato();
+        if (principioCola == null) {
             finalCola = null; // Si el principio de la cola está vacio entonces vaciamos el final.
         }
 
@@ -40,8 +40,24 @@ public class Cola<T> {
         return dt;
     }
 
-    public boolean estaVacio() { 
-        return principioCola == null; 
+    public boolean estaVacio() {
+        return principioCola == null;
+    }
+    // Metodo para mostrar la cola 
+    @Override
+    public String toString() { 
+        if (estaVacio()) {
+            return "Cola Vacia";
+        }
+        StringBuilder stbP = new StringBuilder();
+
+        Nodo<T> nd = principioCola;
+
+        while (nd != null) {
+            stbP.append("[").append(nd.getDato()).append("]");
+            nd = nd.getSiguienteDato();
+        }
+        return stbP.toString().trim();
     }
 
 }
