@@ -9,18 +9,22 @@ public class Pila<T> {
     //CONSTRUCTOR
 
     public Pila() {
-        this.pilaCima=null;
-        this.tamanio=0;
+        this.pilaCima = null;
+        this.tamanio = 0;
     }
-
 
     //METODOS PUSH POP Y ISEMPTY
-
-    public boolean ISEMPTY(){
-        return pilaCima==null;
+    public void push(T dT) {
+        Nodo<T> nd = new Nodo<>(dT);
+        nd.setSiguienteDato(pilaCima);
+        pilaCima = n;
+        tamanio++;
     }
+
+
     
-
-
+    public boolean ISEMPTY() {
+        return pilaCima == null;
+    }
 
 }
