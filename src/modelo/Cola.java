@@ -49,12 +49,12 @@ public class Cola<T> {
         if (estaVacio()) {
             return "Cola Vacia";
         }
-        StringBuilder stbP = new StringBuilder();
+        StringBuilder stbP = new StringBuilder(); // Instancio un objeto de tipo StringBuilder 
 
         Nodo<T> nd = principioCola;
 
         while (nd != null) {
-            stbP.append("[").append(nd.getDato()).append("]");
+            stbP.append("[").append(nd.getDato()).append("]"); 
             nd = nd.getSiguienteDato();
         }
         return stbP.toString().trim();
