@@ -5,12 +5,6 @@ import modelo.Pila;
 
 public class Ejercicio1<T> {
 
-    private Scanner sc;
-
-    public Ejercicio1() {
-
-    }
-
     public String invertirTexto(String texto) {
         Pila<Character> dtCha = new Pila<>();
 
@@ -30,6 +24,9 @@ public class Ejercicio1<T> {
         System.out.println("Introduzca un texto o frase");
         String texto = sc.nextLine();
 
-        String textoInvertido= invertirTexto(texto);
+        String textoInvertido = invertirTexto(texto); // Llamamos al metodo invertirTexto
+
+        System.out.println("Texto sin invertir:" + texto);
+        System.out.println("Texto invertido" + textoInvertido);
     }
 }
