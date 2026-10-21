@@ -3,7 +3,7 @@ package controlador;
 import java.util.Scanner;
 import modelo.Pila;
 
-public class Ejercicio1<T> {
+public class Ejercicio1 {
 
     public static String invertirTexto(String texto) {
         Pila<Character> dtCha = new Pila<>();
@@ -21,10 +21,14 @@ public class Ejercicio1<T> {
     }
 
     public static void imprimirResultado(Scanner sc) {
-
+    
         try {
             System.out.println("Introduzca un texto o frase");
             String texto = sc.nextLine();
+            if(texto.isEmpty()){
+                System.out.println("No puedes ingresar un texto vacío");
+                return;
+            }
             
             String textoInvertido = invertirTexto(texto); // Llamamos al metodo invertirTexto
 
