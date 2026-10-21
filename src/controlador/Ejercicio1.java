@@ -12,18 +12,19 @@ public class Ejercicio1<T> {
 
     }
 
-    public String invertirTexto(String texto){
-      Pila<Character> dtCha= new Pila<>();
-      
-      
+    public String invertirTexto(String texto) {
+        Pila<Character> dtCha = new Pila<>();
 
+        for (int i = 0; i <= texto.length(); i++) {
+            dtCha.apilar(texto.charAt(i));
+        }
+        StringBuilder invertir = new StringBuilder();
 
         return "";
 
-
     }
 
-    public void  imprimirResultado(Scanner sc){
+    public void imprimirResultado(Scanner sc) {
 
     }
 }
