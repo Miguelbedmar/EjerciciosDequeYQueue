@@ -19,8 +19,11 @@ public class Ejercicio1<T> {
             dtCha.apilar(texto.charAt(i));
         }
         StringBuilder invertir = new StringBuilder();
+        while (!dato.estaVacio()) { 
+            invertir.append("[").append(dtCha).append("]");
+        }
 
-        return "";
+        return invertir.toString();
 
     }
 
