@@ -3,7 +3,7 @@ package modelo;
 public class Nodo<T> {
 	//ATRIBUTO
 	private T dato;
-	private Nodo siguienteDato;
+	private Nodo<T> siguienteDato;
 	
 
 	public Nodo(T datoT){
@@ -19,7 +19,7 @@ public class Nodo<T> {
         this.dato = dato;
     }
 
-    public Nodo getSiguienteDato() {
+    public Nodo<T> getSiguienteDato() {
         return siguienteDato;
     }
 
