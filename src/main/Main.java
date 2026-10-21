@@ -1,19 +1,21 @@
 package main;
 
-import modelo.*;
+import modelo.Cola;
 
 public class Main {
 
     public static void main(String[] args) {
-        Pila<String> p = new Pila<>();
+        Cola<String> c = new Cola<>();
 
-        p.apilar("Elemento 1");
-        p.apilar("Elemento 2");
-        p.apilar("Elemento 3");
-        System.out.println("\nTamaño de la  Pila" + p.getTamanio() + p);
+        c.encolar("Elemento 1");
+        c.encolar("Elemento 2");
+        c.encolar("Elemento 3");
 
-        while (!p.estaVacio()) {
-            System.out.println(p.desapilar());
+        System.out.println("Tamaño de la cola :" + c.getTamanio());
+        System.out.println(c);
+
+        while (!c.estaVacio()) {
+            System.out.println(c.desencolar());
         }
 
     }

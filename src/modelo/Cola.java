@@ -58,7 +58,7 @@ public class Cola<T> {
         if (estaVacio()) {
             return "Cola Vacia";
         }
-        StringBuilder stbP = new StringBuilder("Cola: Principio->Final"); // Instancio un objeto de tipo StringBuilder
+        StringBuilder stbP = new StringBuilder("Cola: Principio->Final "); // Instancio un objeto de tipo StringBuilder
 
         Nodo<T> nd = principioCola;
 
