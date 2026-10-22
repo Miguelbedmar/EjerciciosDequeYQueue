@@ -35,7 +35,7 @@ public class Ejercicio2 {
                             System.out.println("Ingrese el nombre del cliente");
                             String nombre = sc.nextLine();
                             if (nombre.isEmpty()) {
-                                System.out.println("El nombre no puede estar vacio");
+                                System.err.println("El nombre no puede estar vacio");
                                 continue;
                             }
                             c.encolar(nombre);
@@ -56,18 +56,18 @@ public class Ejercicio2 {
                             salir = true;
                             break;
                         default:
-                            System.out.println("Opción no disponible");
+                            System.err.println("Opción no disponible");
                             break;
                     }
 
                 } catch (Exception e) { // Control de errores generales
-                    System.out.println(MENSAJE_ERROR);
+                    System.err.println(MENSAJE_ERROR);
                 }
 
             } while (!salir);
 
         } catch (NoSuchElementException e) { // Controlar errores de fin de archivo 
-            System.err.println("ERROR! has entrado al fin del archivo");
+            System.err.println("ERROR!: Has accedido al final del archivo finalizando");
 
         }
 
