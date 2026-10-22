@@ -9,11 +9,11 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ej1.imprimirResultado(sc);
-
+        
+        
     }
 
-    public void menuEjercicios() {
+    public void menuEjercicios(Scanner sc) {
         
     }
 

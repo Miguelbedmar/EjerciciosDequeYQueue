@@ -45,26 +45,24 @@ public class Pila<T> {
         return pilaCima == null; // Comprobamos si la pila está vacía
     }
 
-    //Obtenemos el tamaño de la pila
     public int getTamanio() {
         return tamanio;
     }
 
     //Metodo ToString para mostrar la pila
-
     @Override
     public String toString() {
-        if (estaVacio()) {// Comprobamos si la pila está vacía
-            return "Pila vacía"; 
+        if (estaVacio()) {
+            return "Pila vacía";
         }
-        StringBuilder stbP = new StringBuilder("Pila: Cima->Fondo "); // Instancio  un stringBuilder para concatadenar 
+        StringBuilder stbP = new StringBuilder();
         Nodo<T> nd = pilaCima;
-        while (nd != null) { // Mientras la pila no este vacía se iran concatadenado datos .
+        while (nd != null) {
             stbP.append("[").append(nd.getDato()).append("]");
             nd = nd.getSiguienteDato();
         }
 
-        return stbP.toString();
+        return stbP.toString().trim();
     }
 
 }
