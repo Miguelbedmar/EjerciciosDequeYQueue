@@ -9,8 +9,8 @@ import modelo.Pila;
 public class Ejercicio3 {
 
     public boolean esPalindromo(String texto) {
-        String validado = "";
-        validado = validado.toLowerCase().replace(" ", "");
+
+        String validado = texto.toLowerCase().replace("", "");
 
         Pila<Character> pCh = new Pila<>();
         Cola<Character> cCh = new Cola<>();
@@ -20,10 +20,9 @@ public class Ejercicio3 {
             cCh.encolar(validado.charAt(i));
         }
 
-        while (!pCh.estaVacio()) {  // Mientras la pila no este vacia 
-            Character dentroPila = pCh.desapilar();
-            Character dentroCola = cCh.desencolar();
-            if (!dentroPila.equals(dentroCola)) { // Comparamos entre ambas 
+        while (!pCh.estaVacio()) { // Mientras la pila no este vacia
+
+            if (!pCh.desapilar().equals(cCh.desencolar())) { // Comparamos entre ambas
                 return false;
             }
         }
@@ -47,7 +46,7 @@ public class Ejercicio3 {
 
         } catch (NoSuchElementException e) {
             System.err.println("ERROR!: Has accedido al final del archivo finalizando");
-            return ;
+            return;
         }
 
     }
