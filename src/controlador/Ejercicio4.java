@@ -7,18 +7,18 @@ import modelo.Pila;
 public class Ejercicio4 {
 
     public String conversorBinario(int numero) {
-        if (numero == 0) {
+        if (numero == 0) { // comrpobamos si el numero es cero 
             return "0";
         }
-        Pila<Integer> pIn = new Pila<>();
+        Pila<Integer> pIn = new Pila<>(); 
 
-        while (numero > 0) {
-            pIn.apilar(numero % 2);
+        while (numero > 0) { 
+            pIn.apilar(numero % 2); // apilamos el resto mientras  el numero sea mayor que cero 
             numero = numero / 2;
-        }
+        } // si el usuario ingresa diez deberia dar 1010 como resultado
         StringBuilder strbP = new StringBuilder();
         while (!pIn.estaVacio()) {
-            strbP.append(pIn.desapilar());
+            strbP.append(pIn.desapilar()); 
         }
 
         return strbP.toString();
