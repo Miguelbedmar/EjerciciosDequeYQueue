@@ -29,7 +29,7 @@ public class Ejercicio2 {
                         continue;
                     }
 
-                    switch (opcion=sc.nextInt()) {
+                    switch (opcion = sc.nextInt()) {
 
                         case 1:
                             System.out.println("Ingrese el nombre del cliente");
