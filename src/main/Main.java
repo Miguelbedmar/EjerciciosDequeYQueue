@@ -25,7 +25,7 @@ public class Main {
     }
 
     public static void menuEjercicios(Scanner sc) {
-        boolean salir = true;
+        boolean salir = false;
 
         do {
             try {
@@ -35,12 +35,14 @@ public class Main {
                 System.out.println("<=====3) Ejercicio3===========>");
                 System.out.println("<=====4) Ejercicio4===========>");
                 System.out.println("<=====5) Salir================>");
-                if (!sc.hasNextInt()) {
-                    sc.next();
-                    System.out.println(MENSAJE_ERROR);
-                    continue;
+                int opcion;
+                try {
+                    opcion = Integer.parseInt(sc.nextLine().trim());
+                } catch (NumberFormatException e) {
+                    System.err.println(MENSAJE_ERROR);
+                    opcion=0;
                 }
-                int opcion = sc.nextInt();
+
                 switch (opcion) {
                     case 1:
                         ej1.imprimirResultado(sc);
@@ -62,11 +64,9 @@ public class Main {
                         System.err.println("Opción no disponible..");
                         break;
                 }
-            } catch (NumberFormatException e) {
-                System.err.println(MENSAJE_ERROR);
             } catch (NoSuchElementException e) {
                 System.err.println("Error! has intentado acceder al final del archivo");
-                System.exit(1);
+                salir = true;
             }
         } while (!salir);
 
