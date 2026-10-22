@@ -1,6 +1,6 @@
 package main;
 
-import controlador.Ejercicio1;
+import controlador.*;
 import java.util.Scanner;
 
 public class Main {
