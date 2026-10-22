@@ -33,7 +33,9 @@ public class Ejercicio3 {
 
     public void imprimirResultado(Scanner sc) {
         try {
-            System.out.println();
+            System.out.println("Ingrese el texto");
+            String texto;
+            
 
         } catch (NoSuchElementException e) {
             System.err.println("ERROR!: Has accedido al final del archivo finalizando");
