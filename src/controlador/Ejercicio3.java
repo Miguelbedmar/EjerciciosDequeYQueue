@@ -47,6 +47,7 @@ public class Ejercicio3 {
 
         } catch (NoSuchElementException e) {
             System.err.println("ERROR!: Has accedido al final del archivo finalizando");
+            return ;
         }
 
     }

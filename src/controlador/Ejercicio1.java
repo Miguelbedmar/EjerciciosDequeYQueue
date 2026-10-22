@@ -43,7 +43,7 @@ public class Ejercicio1 {
                 System.out.println("Texto invertido: " + textoInvertido);
 
             } catch (NoSuchElementException e) { // Con la excepción NoSuchElement impedimos que el usuario ingrese más allá del programa.
-                System.out.println("ERROR!: Has accedido al final del archivo finalizando");
+                System.out.println("ERROR!: Has accedido al final del archivo finalizando ejercicio 1...");
                 break;
             }
         }

@@ -29,7 +29,7 @@ public class Main {
 
         do {
             try {
-                System.out.println("<====GESTOR PILAS Y COLAS=====>");
+                System.out.println("<====GESTOR EJERCICIOS=====>");
                 System.out.println("<=====1) Ejercicio1===========>");
                 System.out.println("<=====2).Ejercicio2===========>");
                 System.out.println("<=====3) Ejercicio3===========>");
