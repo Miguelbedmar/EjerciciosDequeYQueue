@@ -10,8 +10,7 @@ public class Ejercicio3 {
 
     public boolean esPalindromo(String texto) {
         String validado = "";
-        validado = validado.toLowerCase().trim(); //String sin mayusculas utilizando tolowercase y eliminamos posible espacios con trim()
-        //se podría utilizar el metodo replace también
+        validado = validado.toLowerCase().replace(" ", "");
 
         Pila<Character> pCh = new Pila<>();
         Cola<Character> cCh = new Cola<>();
@@ -34,7 +33,7 @@ public class Ejercicio3 {
     public void imprimirResultado(Scanner sc) {
         try {
             System.out.println("Ingrese el texto");
-            String texto = "";
+            String texto = sc.nextLine();
 
             if (texto.isEmpty()) {
                 System.err.println("ERRO!: No puedes ingresar un texto");

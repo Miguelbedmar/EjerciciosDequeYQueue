@@ -15,60 +15,57 @@ public class Ejercicio2 {
 
         try {
             do {
+
+                // MENU GESTOR COLA
+                System.out.println("<====Gestor Cola==============>");
+                System.out.println("<====1).Llegada Cliente=======>");
+                System.out.println("<====2).Atender Cliente=======>");
+                System.out.println("<====3).Mostar estado cola====>");
+                System.out.println("<====4). Salir Programa ======>");
+                int opcion;
                 try {
-                    // MENU GESTOR COLA
-                    System.out.println("<====Gestor Cola==============>");
-                    System.out.println("<====1).Llegada Cliente=======>");
-                    System.out.println("<====2).Atender Cliente=======>");
-                    System.out.println("<====3).Mostar estado cola====>");
-                    System.out.println("<====4). Salir Programa ======>");
-                    if (!sc.hasNextInt()) { // comprobamos si el siguiente no es entero
-                        sc.next();
-                        System.out.println(MENSAJE_ERROR);
-                        continue;
-                    }
-                    int opcion = sc.nextInt();
-                    switch (opcion) {
+                    opcion = Integer.parseInt(sc.nextLine().trim());
 
-                        case 1:
-                            sc.nextLine(); // obtemos el salto de linea que quedo pendiente
-                            System.out.println("Ingrese el nombre del cliente");
-                            String nombre = sc.nextLine().trim();
-                            if (nombre.isEmpty()) {
-                                System.err.println("El nombre no puede estar vacio");
-                                continue;
-                            }
-                            c.encolar(nombre);
-                            System.out.println("El cliente está en cola existosamente");
-                            break;
-                        case 2:
-                            if (c.estaVacio()) {
-                                System.out.println("La cola está vacia");
-                                continue;
-                            }
-                            System.out.println(c.desencolar());
-                            break;
-                        case 3:
-                            System.out.println("Hay " + c.getTamanio() + " clientes en cola");
-                            break;
-                        case 4:
-                            System.out.println("Saliendo del programa");
-                            salir = true;
-                            break;
-                        default:
-                            System.err.println("Opción no disponible");
-                            break;
-                    }
-
-                } catch (Exception e) { // Control de errores generales
+                } catch (NumberFormatException e) { // Control de errores generales
                     System.err.println(MENSAJE_ERROR);
+                    opcion = 0;
+                }
+
+                switch (opcion) {
+
+                    case 1:
+                        System.out.println("Ingrese el nombre del cliente");
+                        String nombre = sc.nextLine().trim();
+                        if (nombre.isEmpty()) {
+                            System.err.println("El nombre no puede estar vacio");
+                        }
+                        c.encolar(nombre);
+                        System.out.println("El cliente está en cola existosamente");
+                        break;
+                    case 2:
+                        if (c.estaVacio()) {
+                            System.out.println("La cola está vacia");
+                            continue;
+                        }
+                        System.out.println(c.desencolar());
+                        break;
+                    case 3:
+                        System.out.println("Hay " + c.getTamanio() + " clientes en cola");
+                        break;
+                    case 4:
+                        System.out.println("Saliendo del programa");
+                        salir = true;
+                        break;
+                    default:
+                        System.err.println("Opción no disponible");
+                        break;
                 }
 
             } while (!salir);
 
         } catch (NoSuchElementException e) { // Controlar errores de fin de archivo
             System.err.println("ERROR!: Has accedido al final del archivo finalizando");
-            System.exit(0);
+
         }
 
     }
