@@ -36,6 +36,15 @@ public class Ejercicio3 {
             System.out.println("Ingrese el texto");
             String texto;
             
+            if(texto.isEmpty()){
+                System.err.println("ERRO!: No puedes ingresar un texto");
+                return;
+            }
+            if(esPalindromo(texto)){
+                System.out.println("Es palíndromo");
+            }else{
+                System.out.println("No es palíndromo");
+            }
 
         } catch (NoSuchElementException e) {
             System.err.println("ERROR!: Has accedido al final del archivo finalizando");
