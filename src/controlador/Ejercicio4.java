@@ -1,5 +1,6 @@
 package controlador;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import modelo.Pila;
 
@@ -16,8 +17,32 @@ public class Ejercicio4 {
             numero = numero / 2;
         }
         StringBuilder strbP = new StringBuilder();
+        while (!pIn.estaVacio()) {
+            strbP.append(pIn.desapilar());
+        }
 
-        return "";
+        return strbP.toString();
+    }
+
+    public void ejecutar(Scanner sc) {
+
+        int numero = 0;
+        boolean controladorContinuar = false;
+
+        while (!controladorContinuar) {
+            try {
+              System.out.println("Ingrese un numero");  
+                String entradaValidar= sc.nextLine();
+                numero=Integer.parseInt(entradaValidar);
+
+
+            } catch (NumberFormatException e) {
+                System.err.println("Numer Inválido");
+            } catch (NoSuchElementException e) {
+                System.err.println("ERROR!: Has accedido al final del archivo finalizando");
+                controladorContinuar = false;
+            }
+        }
     }
 
 }
