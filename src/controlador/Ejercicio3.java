@@ -1,10 +1,10 @@
 package controlador;
 //Importaciones
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import modelo.Cola;
 import modelo.Pila;
-import java.util.NoSuchElementException;
 
 public class Ejercicio3 {
 
@@ -34,15 +34,15 @@ public class Ejercicio3 {
     public void imprimirResultado(Scanner sc) {
         try {
             System.out.println("Ingrese el texto");
-            String texto;
-            
-            if(texto.isEmpty()){
+            String texto = "";
+
+            if (texto.isEmpty()) {
                 System.err.println("ERRO!: No puedes ingresar un texto");
                 return;
             }
-            if(esPalindromo(texto)){
+            if (esPalindromo(texto)) {
                 System.out.println("Es palíndromo");
-            }else{
+            } else {
                 System.out.println("No es palíndromo");
             }
 
