@@ -24,17 +24,22 @@ public class Ejercicio4 {
         return strbP.toString();
     }
 
-    public void ejecutar(Scanner sc) {
+    public void imprimirResultado(Scanner sc) { 
 
         int numero = 0;
-        boolean controladorContinuar = false;
+        boolean controladorContinuar = true;
 
-        while (!controladorContinuar) {
+        while (controladorContinuar) {
             try {
-              System.out.println("Ingrese un numero");  
-                String entradaValidar= sc.nextLine();
-                numero=Integer.parseInt(entradaValidar);
-
+                System.out.println("Ingrese un numero");
+                String entradaValidar = sc.nextLine();
+                numero = Integer.parseInt(entradaValidar);
+                if (numero < 0) {
+                    System.err.println("ERROR! debes ingresar un numero positivo");
+                } else {
+                    System.out.println("Numero binario: " + conversorBinario(numero));
+                    controladorContinuar = false;
+                }
 
             } catch (NumberFormatException e) {
                 System.err.println("Numer Inválido");
