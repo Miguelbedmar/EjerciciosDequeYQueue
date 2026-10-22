@@ -16,12 +16,17 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        ej1 = new Ejercicio1();
+        ej2 = new Ejercicio2();
+        ej3 = new Ejercicio3();
+        ej4 = new Ejercicio4();
         menuEjercicios(sc);
+        sc.close();
     }
 
     public static void menuEjercicios(Scanner sc) {
-        boolean salir = false;
-        int opcion = 0;
+        boolean salir = true;
+
         do {
             try {
                 System.out.println("<====GESTOR PILAS Y COLAS=====>");
@@ -30,17 +35,16 @@ public class Main {
                 System.out.println("<=====3) Ejercicio3===========>");
                 System.out.println("<=====4) Ejercicio4===========>");
                 System.out.println("<=====5) Salir================>");
-                if (!sc.hasNextInt()) { // comprobamos si el siguiente no es entero
+                if (!sc.hasNextInt()) {
                     sc.next();
                     System.out.println(MENSAJE_ERROR);
                     continue;
                 }
-
-                switch (opcion = sc.nextInt()) {
+                int opcion = sc.nextInt();
+                switch (opcion) {
                     case 1:
                         ej1.imprimirResultado(sc);
                         break;
-
                     case 2:
                         ej2.controlCola(sc);
                         break;
@@ -52,7 +56,7 @@ public class Main {
                         break;
                     case 5:
                         System.out.println("Saliendo del programa...");
-                        salir = false;
+                        salir = true;
                         break;
                     default:
                         System.err.println("Opción no disponible..");
@@ -61,7 +65,8 @@ public class Main {
             } catch (NumberFormatException e) {
                 System.err.println(MENSAJE_ERROR);
             } catch (NoSuchElementException e) {
-                System.err.println("Error! has intentado accder al final del archivo");
+                System.err.println("Error! has intentado acceder al final del archivo");
+                System.exit(1);
             }
         } while (!salir);
 
