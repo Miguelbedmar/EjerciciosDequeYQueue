@@ -29,19 +29,35 @@ public class Ejercicio2 {
                         continue;
                     }
 
-                    switch (opcion) {
+                    switch (opcion=sc.nextInt()) {
 
                         case 1:
+                            System.out.println("Ingrese el nombre del cliente");
+                            String nombre = sc.nextLine();
+                            if (nombre.isEmpty()) {
+                                System.out.println("El nombre no puede estar vacio");
+                                continue;
+                            }
+                            c.encolar(nombre);
+                            System.out.println("El cliente está en cola existosamente");
                             break;
                         case 2:
+                            if (c.estaVacio()) {
+                                System.out.println("La cola está vacia");
+                                continue;
+                            }
+                            System.out.println(c.desencolar());
                             break;
                         case 3:
+                            System.out.println("Hay " + c.getTamanio() + " clientes en cola");
                             break;
                         case 4:
                             System.out.println("Saliendo del programa");
-                               System.exit(0);
+                            salir = true;
                             break;
-
+                        default:
+                            System.out.println("Opción no disponible");
+                            break;
                     }
 
                 } catch (Exception e) { // Control de errores generales
