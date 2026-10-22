@@ -10,27 +10,26 @@ public class Main {
                                                                           // error
 
     private static Ejercicio1 ej1;
-    private Ejercicio1 ej1;
-    private Ejercicio2 ej2;
-    private Ejercicio3 ej3;
-    private Ejercicio4 ej4;
+    private static Ejercicio2 ej2;
+    private static Ejercicio3 ej3;
+    private static Ejercicio4 ej4;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        menuEjercicios(sc);
     }
 
-    public void menuEjercicios(Scanner sc) {
+    public static void menuEjercicios(Scanner sc) {
         boolean salir = false;
         int opcion = 0;
         do {
             try {
                 System.out.println("<====GESTOR PILAS Y COLAS=====>");
-                System.out.println("<=====1).Ejercicio1===========>");
+                System.out.println("<=====1) Ejercicio1===========>");
                 System.out.println("<=====2).Ejercicio2===========>");
-                System.out.println("<=====3).Ejercicio3===========>");
-                System.out.println("<=====4).Ejercicio4===========>");
-                System.out.println("<=====5).Salir================>");
+                System.out.println("<=====3) Ejercicio3===========>");
+                System.out.println("<=====4) Ejercicio4===========>");
+                System.out.println("<=====5) Salir================>");
                 if (!sc.hasNextInt()) { // comprobamos si el siguiente no es entero
                     sc.next();
                     System.out.println(MENSAJE_ERROR);
@@ -41,8 +40,9 @@ public class Main {
                     case 1:
                         ej1.imprimirResultado(sc);
                         break;
-                        ej2.controlCola(sc);
+
                     case 2:
+                        ej2.controlCola(sc);
                         break;
                     case 3:
                         ej3.imprimirResultado(sc);
@@ -53,7 +53,7 @@ public class Main {
                     case 5:
                         System.out.println("Saliendo del programa...");
                         salir = false;
-                        break;    
+                        break;
                     default:
                         System.err.println("Opción no disponible..");
                         break;
